@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import testbase.TestBase;
 import util.ConfigurationReader;
+import util.Driver;
 
 public class LoginTest extends TestBase {
 	
@@ -20,6 +21,7 @@ public class LoginTest extends TestBase {
 		loginPage.userID.sendKeys(ConfigurationReader.getProperty("username"));
 		loginPage.password.sendKeys(ConfigurationReader.getProperty("password"));
 		loginPage.submit.click();
+		Assert.assertEquals(Driver.getDriver().getTitle(), "Guru99 Bank Manager HomePage");
 		
 		
 	}
